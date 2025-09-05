@@ -1,0 +1,33 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de IDEs
+*.iml
+.idea/
+*.classpath
+*.project
+*.settings/
+.vscode/
+
+# Archivos de construcción de Gradle
+.gradle/
+build/
+out/
+
+# Dependencias descargadas por Gradle
+**/build/
+**/out/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Archivos de SerenityBDD
+target/
+.serenity/
+
+# Archivos de caché y temporales
+*.log
+*.tmp
+*.swp
+
+# Archivos generados de Cucumber
