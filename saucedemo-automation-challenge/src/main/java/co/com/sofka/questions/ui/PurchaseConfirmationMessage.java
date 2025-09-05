@@ -1,4 +1,4 @@
-package co.com.sofka.questions;
+package co.com.sofka.questions.ui;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

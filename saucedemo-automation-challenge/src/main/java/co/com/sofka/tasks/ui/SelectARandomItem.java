@@ -1,4 +1,4 @@
-package co.com.sofka.tasks;
+package co.com.sofka.tasks.ui;
 
 import net.serenitybdd.core.pages.ListOfWebElementFacades;
 import net.serenitybdd.core.pages.WebElementFacade;

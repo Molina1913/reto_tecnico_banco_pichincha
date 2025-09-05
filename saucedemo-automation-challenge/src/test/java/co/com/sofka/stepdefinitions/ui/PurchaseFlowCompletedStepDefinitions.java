@@ -1,4 +1,4 @@
-package co.com.sofka.stepdefinitions;
+package co.com.sofka.stepdefinitions.ui;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,13 +10,13 @@ import static co.com.sofka.Constants.ACTUAL_MESSAGE;
 import static co.com.sofka.Constants.EXPECTED_MESSAGE;
 import static co.com.sofka.interactions.ClickLoginButton.clickLoginButton;
 import static co.com.sofka.interactions.ClickShoppingCartButton.clickShoppingCartButton;
-import static co.com.sofka.questions.PurchaseConfirmationMessage.purchaseConfirmationMessage;
-import static co.com.sofka.tasks.CompletePurchase.completePurchase;
-import static co.com.sofka.tasks.EnterPassword.enterPassword;
-import static co.com.sofka.tasks.EnterUserName.enterUserName;
+import static co.com.sofka.questions.ui.PurchaseConfirmationMessage.purchaseConfirmationMessage;
+import static co.com.sofka.tasks.ui.CompletePurchase.completePurchase;
+import static co.com.sofka.tasks.ui.EnterPassword.enterPassword;
+import static co.com.sofka.tasks.ui.EnterUserName.enterUserName;
 import static co.com.sofka.setup.SetUpSelection.setUpSelection;
-import static co.com.sofka.tasks.OpenHomePage.openPage;
-import static co.com.sofka.tasks.SelectARandomItem.selectARandomItem;
+import static co.com.sofka.tasks.ui.OpenHomePage.openPage;
+import static co.com.sofka.tasks.ui.SelectARandomItem.selectARandomItem;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.CoreMatchers.equalTo;
