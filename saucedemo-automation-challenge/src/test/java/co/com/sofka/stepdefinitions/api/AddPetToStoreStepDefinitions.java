@@ -7,7 +7,6 @@ import co.com.sofka.tasks.api.AddPet;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.rest.questions.LastResponse;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
@@ -19,7 +18,6 @@ import static co.com.sofka.Constants.PET_NAME;
 import static co.com.sofka.Constants.STATUS_CODE;
 import static co.com.sofka.questions.api.GetInformation.getInformation;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 public class AddPetToStoreStepDefinitions extends ServicesSetUp {
