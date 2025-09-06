@@ -84,7 +84,6 @@ public class PurchaseFlowCompletedStepDefinitions {
             theActorInTheSpotlight().attemptsTo(
                     completePurchase().withInfo(firstName, lastName, postalCode)
             );
-            Thread.sleep(6000);
             System.out.println(PURCHASE_COMPLETED);
         } catch (Exception e) {
             System.out.println(e.getMessage());
