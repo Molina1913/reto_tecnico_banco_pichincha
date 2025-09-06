@@ -11,5 +11,8 @@ public class Constants {
     public static final String ACTUAL_MESSAGE = "Actual message: ";
     public static final String EXPECTED_MESSAGE = "expected message: ";
     public static final String STATUS_CODE = "status code";
-    public static final String PET_NAME = "Pet name";
+    public static final String PET_NAME = "Pet name: ";
+    public static final String PET_ID = "Pet id: ";
+    public static final String REGISTERED_PET_ID = "Registered pet with ID: ";
+    public static final String PHOTO_URLS = "https://example.com/photo.jpg";
 }
