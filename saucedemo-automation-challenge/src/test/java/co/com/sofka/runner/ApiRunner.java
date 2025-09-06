@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/petstore.feature",
         glue = "co.com.sofka.stepdefinitions",
-        snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@Services4"
+        snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class ApiRunner {
 }
