@@ -1,9 +1,12 @@
 package co.com.sofka.models;
 
+import java.util.List;
+
 public class Pet {
     private long id;
     private String name;
     private String status;
+    private List<String> photoUrls;
 
     public long getId() {
         return id;
@@ -27,5 +30,13 @@ public class Pet {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public List<String> getPhotoUrls() {
+        return photoUrls;
+    }
+
+    public void setPhotoUrls(List<String> photoUrls) {
+        this.photoUrls = photoUrls;
     }
 }
