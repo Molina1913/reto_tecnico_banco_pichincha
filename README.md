@@ -1,13 +1,13 @@
-# 🔍 Reto técnico Saucedemo BP
+# 🔍 Reto técnico Saucedemo y Pet store BP
 
-Este proyecto implementa pruebas automatizadas utilizando **Serenity BDD**, usando el patrón de diseño **Screenplay**, *
-*Java**, **Cucumber**  y **Gradle** para validar funcionalidades de Saucedemo.
+Este proyecto implementa pruebas automatizadas utilizando Serenity BDD, aplicando el patrón de diseño Screenplay, junto con Java 17, Cucumber y Gradle. Incluye automatización de pruebas tanto para interfaz de usuario (UI) como para servicios REST (API).
 
 ## 🛠️ Tecnologías y herramientas
 
 - [Java 17](https://www.oracle.com/java/)
 - [Serenity BDD](https://serenity-bdd.github.io/theserenitybook/)
 - [Gradle](https://gradle.org/)
+- Serenity Rest
 - JUnit
 - Cucumber
 - IntelliJ
@@ -42,7 +42,23 @@ Este proyecto implementa pruebas automatizadas utilizando **Serenity BDD**, usan
 
 
 ## ✅ Funcionalidades automatizadas
+UI Web (Saucedemo)
 - Login
 - Selección de productos
 - Visualización de carrito de compras
 - Realización del checkout
+
+API / Servicios (Pet Store)
+
+- Creación de registros
+- Consultas de registros
+- Validación de respuesta de servicios
+- Verificación de status codes y estructuras de respuesta
+
+## 🧪 Estructura de pruebas para API
+
+La estructura de pruebas para servicios sigue el mismo patrón Screenplay:
+
+- Tasks: Realizan peticiones (GET, POST, etc.).
+- Questions: Validan el contenido de las respuestas.
+- Models: Representan los datos que se envían o reciben.
