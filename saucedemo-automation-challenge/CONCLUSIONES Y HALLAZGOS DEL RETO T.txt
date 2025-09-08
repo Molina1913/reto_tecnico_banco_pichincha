@@ -1,0 +1,80 @@
+CONCLUSIONES Y HALLAZGOS DEL RETO TÉCNICO
+
+Este documento presenta los hallazgos, aprendizajes y conclusiones derivados de la implementación del reto técnico, compuesto por dos ejercicios: uno de automatización funcional de interfaz gráfica (UI) y otro de pruebas sobre servicios REST (API). Ambos fueron desarrollados utilizando el framework Serenity BDD en Java, bajo una arquitectura unificada y modularizada en un único proyecto.
+
+==========================================================
+🧪 EJERCICIO 1 – Prueba Funcional Automatizada (UI)
+==========================================================
+
+✅ Tecnología utilizada:
+- Framework: Serenity BDD
+- Patrón: Screenplay
+- Lenguaje: Java 17
+- Herramientas: Gradle, Cucumber, Serenity Reports
+
+🎯 Flujo automatizado:
+- Autenticación en la página [saucedemo.com](https://www.saucedemo.com/) con el usuario `standard_user` y clave `secret_sauce`.
+- Selección de dos productos y adición al carrito.
+- Visualización del carrito con validación de productos seleccionados.
+- Llenado del formulario de checkout.
+- Finalización del proceso de compra y validación del mensaje final: “THANK YOU FOR YOUR ORDER”.
+
+📌 Hallazgos:
+- Se identificaron selectores estables y adecuados para la automatización del flujo.
+- La implementación con el patrón Screenplay facilitó una estructura clara, mantenible y orientada a tareas y responsabilidades específicas.
+- Se aplicaron buenas prácticas de sincronización (esperas implícitas/controladas).
+- Se validaron tanto los textos visibles como la navegación entre pantallas, asegurando la cobertura funcional del flujo completo.
+
+📈 Resultados:
+- La prueba se ejecuta satisfactoriamente sin errores.
+- Tiempo total estimado de ejecución: menos de 10 segundos.
+- Reporte de ejecución generado en: `target/site/serenity/index.html`.
+
+✅ Conclusión:
+La automatización del flujo de compra fue exitosa, cumpliendo con todos los pasos definidos y permitiendo validar el comportamiento esperado de la aplicación. La estructura con Serenity + Screenplay permitió una implementación modular, reutilizable y orientada a negocio.
+
+==========================================================
+🔁 EJERCICIO 2 – Prueba de Servicios REST (API PetStore)
+==========================================================
+
+✅ Tecnología utilizada:
+- Framework: Serenity REST (integrado en el mismo proyecto)
+- Lenguaje: Java 17
+- Herramientas: Gradle, Cucumber, Serenity Reports
+- API bajo prueba: [PetStore Swagger](https://petstore.swagger.io/)
+
+🎯 Casos automatizados:
+1. Añadir una mascota a la tienda (POST /pet)
+2. Consultar la mascota recién creada por su ID (GET /pet/{id})
+3. Actualizar el nombre y el estado de la mascota a “sold” (PUT /pet)
+4. Consultar la mascota modificada por su nuevo estatus (GET /pet/findByStatus)
+
+📌 Hallazgos:
+- Se manejaron correctamente las entradas y salidas JSON utilizando objetos modelo (`POJOs`).
+- Se emplearon variables dinámicas para capturar el `id` de la mascota creada, y reutilizarlo en los pasos siguientes del flujo.
+- Se validaron respuestas HTTP (`200`) y el contenido de los cuerpos (`name`, `status`, `id`, etc).
+- Las pruebas se integraron completamente en el flujo de Cucumber + Serenity REST, manteniendo la coherencia del proyecto.
+- Se organizaron los endpoints, tasks y questions siguiendo el patrón Screenplay también en la capa de servicios.
+
+📈 Resultados:
+- Todas las pruebas fueron ejecutadas exitosamente, confirmando el flujo completo de creación, consulta, actualización y búsqueda por estatus.
+- Tiempo total estimado de ejecución: menos de 5 segundos.
+- Reporte unificado en `target/site/serenity/index.html`.
+
+✅ Conclusión:
+La automatización de las pruebas sobre la API de PetStore se implementó de forma efectiva usando Serenity REST, dentro del mismo entorno del proyecto de pruebas funcionales. Esto facilitó la reutilización de estructura, estilo y reporte. La integración de pruebas de servicios bajo el mismo enfoque de Screenplay fortaleció la mantenibilidad y cohesión del código.
+
+==========================================================
+📌 CONCLUSIONES GENERALES
+==========================================================
+
+- Ambos ejercicios fueron desarrollados bajo una única arquitectura utilizando Serenity BDD y patrón Screenplay, lo que permitió una estructura unificada, clara y profesional.
+- Se cumplieron todos los requisitos funcionales de ambos ejercicios, validando tanto flujos E2E en UI como operaciones CRUD sobre una API REST.
+- Se implementaron buenas prácticas de automatización, separación de responsabilidades (tasks, questions, models), y manejo adecuado de datos.
+- El reporte generado por Serenity proporciona trazabilidad completa de cada escenario y paso ejecutado, facilitando su revisión.
+- El proyecto se encuentra publicado en un repositorio público de GitHub, e incluye:
+  - Scripts fuente organizados por capas
+  - Archivos de configuración (`gradle`, `serenity.properties`, etc.)
+  - Instrucciones de ejecución detalladas (`README.md`)
+  - Reportes de ejecución
+  - Este documento de conclusiones
