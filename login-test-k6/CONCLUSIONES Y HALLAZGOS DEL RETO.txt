@@ -1,0 +1,73 @@
+CONCLUSIONES DE LA PRUEBA DE CARGA AL SERVICIO DE LOGIN
+--------------------------------------------------------
+
+✔ Herramienta utilizada: K6 (v1.3.0)
+✔ Endpoint probado: https://fakestoreapi.com/auth/login
+✔ Método: POST
+✔ Carga generada: 20 usuarios virtuales (VUs) durante 30 segundos
+✔ Datos de entrada: parametrizados desde archivo CSV con 5 usuarios
+✔ Validaciones implementadas:
+   - Código de estado 201
+   - Tiempo de respuesta < 1.5 segundos
+
+---
+
+1. CUMPLIMIENTO DE LOS CRITERIOS DEL EJERCICIO
+-----------------------------------------------
+
+📌 1. Tiempo de respuesta máximo permitido: 1.5 segundos
+
+   ➤ Resultado:
+   - Promedio (avg): 335.56 ms
+   - Percentil 95 (p95): 367.67 ms
+   - Máximo (max): 599.61 ms
+
+   ✅ CONCLUSIÓN: CUMPLIDO
+   Todos los tiempos de respuesta estuvieron muy por debajo del límite establecido de 1.5 segundos.
+
+📌 2. Tasa de error aceptable: < 3% del total de peticiones
+
+   ➤ Resultado:
+   - Total de checks: 3564
+   - Checks exitosos: 100%
+   - Fallos: 0%
+   - Fallos HTTP: 0%
+
+   ✅ CONCLUSIÓN: CUMPLIDO
+   Todas las solicitudes fueron exitosas y cumplieron con las validaciones definidas en el script.
+
+📌 3. Alcanzar al menos 20 transacciones por segundo (TPS)
+
+   ➤ Resultado:
+   - Total de peticiones: 1782
+   - Duración de prueba: 30 segundos
+   - TPS promedio: ~59.4
+
+   ✅ CONCLUSIÓN: CUMPLIDO
+   Se superó ampliamente la meta de 20 TPS al alcanzar casi 60 transacciones por segundo.
+
+---
+
+2. OBSERVACIONES IMPORTANTES
+-----------------------------
+
+- En la versión anterior del script, se incluía un `sleep(1)`, lo que limitaba la cantidad de transacciones por segundo (~15 TPS). Al eliminarlo, se logró escalar la carga y cumplir con la meta de rendimiento.
+
+- La métrica `http_req_failed` fue de 0%, indicando que no hubo errores de red, fallos del servidor ni respuestas inválidas.
+
+- Los tiempos de respuesta se mantuvieron estables incluso con una carga más alta, lo que sugiere que el servicio puede manejar picos sin degradar su rendimiento.
+
+---
+
+
+3. CONCLUSIÓN GENERAL
+----------------------
+
+La prueba cumple completamente con los tres criterios solicitados en el ejercicio:
+
+✔ Tiempo de respuesta dentro del límite  
+✔ Tasa de error por debajo del 3%  
+✔ Más de 20 transacciones por segundo (TPS)
+
+El servicio de login respondió correctamente, fue estable bajo carga, y demostró capacidad de manejar al menos 60 TPS sin errores ni lentitud.
+
